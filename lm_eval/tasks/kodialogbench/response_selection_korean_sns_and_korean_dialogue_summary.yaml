@@ -1,0 +1,17 @@
+task: kodialogbench_response_selection_korean_sns_and_korean_dialogue_summary
+group:
+  - kodialogbench_response_selection
+dataset_path: json
+dataset_name: null
+dataset_kwargs:
+  data_files: 
+    test: ../data/prep/korean_sns_and_korean_dialogue_summary.jsonl
+test_split: test
+output_type: multiple_choice
+doc_to_text: !function utils.doc_to_text_response_selection_korean_sns_and_korean_dialogue_summary
+doc_to_choice: !function utils.doc_to_choice_response_selection
+doc_to_target: 0
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: True
